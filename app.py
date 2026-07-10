@@ -1,9 +1,5 @@
-import sys
-
-print(sys.executable)
-print(sys.version)
-
 import folium
+from folium.plugins import AntPath
 
 # Generic flight path defined from London Heathrow (LHR) to Airbus HQ in Toulouse, France
 flight_coordinates = [
@@ -37,6 +33,15 @@ folium.PolyLine(
     opacity=0.8
 ).add_to(flight_map)
 
-# 5. Save the finished map as html file
+# Add an animated ant path to represent the flight trajectory
+AntPath(
+    locations=flight_coordinates,
+    dash_array=[20, 30],
+    delay=1000,
+    color="#005B5B",
+    pulse_color="#FFFFFF"
+).add_to(flight_map)
+
+# Save the finished map as html file
 flight_map.save("my_flight_visualizer.html")
 print("Success! Open 'my_flight_visualizer.html' in your browser to see your map.")

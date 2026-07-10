@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_be4256475ddaa2f97f3c1ade394b5f62 {
+                #map_d0cbcc57c3d2b3b6b6f84d87bd1576e0 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -50,18 +50,19 @@
             </script>
 
         
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_be4256475ddaa2f97f3c1ade394b5f62" ></div>
+            <div class="folium-map" id="map_d0cbcc57c3d2b3b6b6f84d87bd1576e0" ></div>
         
 </body>
 <script>
     
     
-            var map_be4256475ddaa2f97f3c1ade394b5f62 = L.map(
-                "map_be4256475ddaa2f97f3c1ade394b5f62",
+            var map_d0cbcc57c3d2b3b6b6f84d87bd1576e0 = L.map(
+                "map_d0cbcc57c3d2b3b6b6f84d87bd1576e0",
                 {
                     center: [47.5, 0.5],
                     crs: L.CRS.EPSG3857,
@@ -78,7 +79,7 @@
 
         
     
-            var tile_layer_5a4228734b178d7b4b74b1489b830670 = L.tileLayer(
+            var tile_layer_8c5b1423fd434f8b2774ed2f4c61ef08 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,17 +96,17 @@
             );
         
     
-            tile_layer_5a4228734b178d7b4b74b1489b830670.addTo(map_be4256475ddaa2f97f3c1ade394b5f62);
+            tile_layer_8c5b1423fd434f8b2774ed2f4c61ef08.addTo(map_d0cbcc57c3d2b3b6b6f84d87bd1576e0);
         
     
-            var marker_ad7f0f802586d8897f9f62d9a163f6fa = L.marker(
+            var marker_256146f9a860c1937db074b73e3949c9 = L.marker(
                 [51.4776, -0.4332],
                 {
 }
-            ).addTo(map_be4256475ddaa2f97f3c1ade394b5f62);
+            ).addTo(map_d0cbcc57c3d2b3b6b6f84d87bd1576e0);
         
     
-            var icon_5f7436c02aa3e38428726edcaa317f18 = L.AwesomeMarkers.icon(
+            var icon_c5769bfa3b6bd5a8612b51a6581520e6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
@@ -116,34 +117,34 @@
             );
         
     
-        var popup_d99a2c2e8c259b7cfa017b5657d82a11 = L.popup({
+        var popup_da6026765313a091c7755871a3f7eea5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_907732cdd3f8329a0524c79a417aa575 = $(`<div id="html_907732cdd3f8329a0524c79a417aa575" style="width: 100.0%; height: 100.0%;">Departure: London Heathrow (LHR)</div>`)[0];
-                popup_d99a2c2e8c259b7cfa017b5657d82a11.setContent(html_907732cdd3f8329a0524c79a417aa575);
+                var html_260c851ed9ed99723d408d3b90022674 = $(`<div id="html_260c851ed9ed99723d408d3b90022674" style="width: 100.0%; height: 100.0%;">Departure: London Heathrow (LHR)</div>`)[0];
+                popup_da6026765313a091c7755871a3f7eea5.setContent(html_260c851ed9ed99723d408d3b90022674);
             
         
 
-        marker_ad7f0f802586d8897f9f62d9a163f6fa.bindPopup(popup_d99a2c2e8c259b7cfa017b5657d82a11)
+        marker_256146f9a860c1937db074b73e3949c9.bindPopup(popup_da6026765313a091c7755871a3f7eea5)
         ;
 
         
     
     
-                marker_ad7f0f802586d8897f9f62d9a163f6fa.setIcon(icon_5f7436c02aa3e38428726edcaa317f18);
+                marker_256146f9a860c1937db074b73e3949c9.setIcon(icon_c5769bfa3b6bd5a8612b51a6581520e6);
             
     
-            var marker_c8d4fafd83df527f84576cf425dda8e7 = L.marker(
+            var marker_a0360a611a1007e03ad0777f53992d47 = L.marker(
                 [43.6291, 1.3638],
                 {
 }
-            ).addTo(map_be4256475ddaa2f97f3c1ade394b5f62);
+            ).addTo(map_d0cbcc57c3d2b3b6b6f84d87bd1576e0);
         
     
-            var icon_01b6f08030b19c7e030fcac8a20f514d = L.AwesomeMarkers.icon(
+            var icon_d68ae3d12003f158a3c05ee280a3f22e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -154,30 +155,60 @@
             );
         
     
-        var popup_903df1a61640af35ae7b88845d78bd1a = L.popup({
+        var popup_d573ee8f4f7902b57c7de0cb88ea487c = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_12d02bc68ece0c5a896d239889fba395 = $(`<div id="html_12d02bc68ece0c5a896d239889fba395" style="width: 100.0%; height: 100.0%;">Destination: Airbus HQ (Toulouse)</div>`)[0];
-                popup_903df1a61640af35ae7b88845d78bd1a.setContent(html_12d02bc68ece0c5a896d239889fba395);
+                var html_23356ac5b4dcaa149937722a49c8ec17 = $(`<div id="html_23356ac5b4dcaa149937722a49c8ec17" style="width: 100.0%; height: 100.0%;">Destination: Airbus HQ (Toulouse)</div>`)[0];
+                popup_d573ee8f4f7902b57c7de0cb88ea487c.setContent(html_23356ac5b4dcaa149937722a49c8ec17);
             
         
 
-        marker_c8d4fafd83df527f84576cf425dda8e7.bindPopup(popup_903df1a61640af35ae7b88845d78bd1a)
+        marker_a0360a611a1007e03ad0777f53992d47.bindPopup(popup_d573ee8f4f7902b57c7de0cb88ea487c)
         ;
 
         
     
     
-                marker_c8d4fafd83df527f84576cf425dda8e7.setIcon(icon_01b6f08030b19c7e030fcac8a20f514d);
+                marker_a0360a611a1007e03ad0777f53992d47.setIcon(icon_d68ae3d12003f158a3c05ee280a3f22e);
             
     
-            var poly_line_8b6cbb9171db1d9f82c45485646f640d = L.polyline(
+            var poly_line_fc12d0883c1d09bc58910cb138b18656 = L.polyline(
                 [[51.4776, -0.4332], [49.9, 0.5], [47.3, 1.2], [43.6291, 1.3638]],
                 {"bubblingMouseEvents": true, "color": "#00205B", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00205B", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(map_be4256475ddaa2f97f3c1ade394b5f62);
+            ).addTo(map_d0cbcc57c3d2b3b6b6f84d87bd1576e0);
+        
+    
+            ant_path_2c877d4cac477298f333e580f83f6607 = L.polyline.antPath(
+              [[51.4776, -0.4332], [49.9, 0.5], [47.3, 1.2], [43.6291, 1.3638]],
+              {
+  "stroke": true,
+  "color": "#005B5B",
+  "weight": 5,
+  "opacity": 0.5,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+30,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#005B5B",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_d0cbcc57c3d2b3b6b6f84d87bd1576e0);
         
 </script>
 </html>
