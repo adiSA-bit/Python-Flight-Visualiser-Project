@@ -1,0 +1,45 @@
+[{
+    "flight_number": "LX234",
+    "departure": "2024-07-15T08:30:00Z",
+    "arrival": "2024-07-15T12:45:00Z",
+    "origin": "ZRH",
+    "destination": "ARN",
+    "airline": "Swiss International Air Lines",
+    "status": "On Time"
+},
+{
+    "flight_number": "SQ24",
+    "departure": "2024-07-15T09:00:00Z",
+    "arrival": "2024-07-15T13:15:00Z",
+    "origin": "SIN",
+    "destination": "JFK",
+    "airline": "Singapore Airlines",
+    "status": "On Time"
+},
+{
+    "flight_number": "AA100",
+    "departure": "2024-07-15T10:00:00Z",
+    "arrival": "2024-07-15T14:30:00Z",
+    "origin": "LAX",
+    "destination": "ORD",
+    "airline": "American Airlines",
+    "status": "Delayed"
+},
+{
+    "flight_number": "BA150",
+    "departure": "2024-07-15T11:00:00Z",
+    "arrival": "2024-07-15T15:20:00Z",
+    "origin": "LHR",
+    "destination": "DXB",
+    "airline": "British Airways",
+    "status": "On Time"
+},
+{
+    "flight_number": "AF200",
+    "departure": "2024-07-15T12:30:00Z",
+    "arrival": "2024-07-15T16:45:00Z",
+    "origin": "CDG",
+    "destination": "NRT",
+    "airline": "Air France",
+    "status": "Cancelled"
+}]
