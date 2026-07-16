@@ -2,7 +2,7 @@
     "registration": "HB-XYZ",
     "model": "Airbus A320-251N",
     "airline": "Swiss International Air Lines",
-    "age": 3,
+    "year_built": 2019,
     "capacity": 180,
     "fuel_capacity": 23800
 },
@@ -10,7 +10,7 @@
     "registration": "9V-SKQ",
     "model": "Airbus A350-900ULR",
     "airline": "Singapore Airlines",
-    "age": 5,
+    "year_built": 2021,
     "capacity": 365,
     "fuel_capacity": 181283
 },
@@ -18,7 +18,7 @@
     "registration": "N123AA",
     "model": "Boeing 737-800",
     "airline": "American Airlines",
-    "age": 7,
+    "year_built": 2016,
     "capacity": 160,
     "fuel_capacity": 26020
 },
@@ -26,7 +26,7 @@
     "registration": "G-BAAB",
     "model": "Airbus A380-841",
     "airline": "British Airways",
-    "age": 10,
+    "year_built": 2013,
     "capacity": 469,
     "fuel_capacity": 320000
 },
@@ -34,7 +34,7 @@
     "registration": "F-GZAF",
     "model": "Airbus A350-900",
     "airline": "Air France",
-    "age": 4,
+    "year_built": 2019,
     "capacity": 324,
     "fuel_capacity": 138000
 }]

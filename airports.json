@@ -2,6 +2,7 @@
     "iata": "LHR",
     "name": "London Heathrow Airport",
     "city": "London",
+    "country": "United Kingdom",
     "latitude": 51.4776,
     "longitude": -0.4332
 },
@@ -9,6 +10,7 @@
     "iata": "ZRH",
     "name": "Zurich Airport",
     "city": "Zurich",
+    "country": "Switzerland",
     "latitude": 47.4757,
     "longitude": 8.5300
 },
@@ -16,6 +18,7 @@
     "iata": "JFK",
     "name": "John F. Kennedy International Airport",
     "city": "New York",
+    "country": "United States",
     "latitude": 40.6397,
     "longitude": -73.7789
 },
@@ -23,6 +26,7 @@
     "iata": "SIN",
     "name": "Singapore Changi Airport",
     "city": "Singapore",
+    "country": "Singapore",
     "latitude": 1.3644,
     "longitude": 103.9915
 },
@@ -30,6 +34,7 @@
     "iata": "CDG",
     "name": "Charles de Gaulle Airport",
     "city": "Paris",
+    "country": "France",
     "latitude": 49.0097,
     "longitude": 2.5479
 },
@@ -37,6 +42,7 @@
     "iata": "LAX",
     "name": "Los Angeles International Airport",
     "city": "Los Angeles",
+    "country": "United States",
     "latitude": 33.9425,
     "longitude": -118.4081
 },
@@ -44,6 +50,7 @@
     "iata": "ORD",
     "name": "O'Hare International Airport",
     "city": "Chicago",
+    "country": "United States",
     "latitude": 41.9786,
     "longitude": -87.9048
 },
@@ -51,6 +58,7 @@
     "iata": "DXB",
     "name": "Dubai International Airport",
     "city": "Dubai",
+    "country": "United Arab Emirates",
     "latitude": 25.2528,
     "longitude": 55.3644
 },
@@ -58,6 +66,7 @@
     "iata": "NRT",
     "name": "Narita International Airport",
     "city": "Tokyo",
+    "country": "Japan",
     "latitude": 35.7647,
     "longitude": 140.3864
 },
@@ -65,6 +74,7 @@
     "iata": "ARN",
     "name": "Stockholm Arlanda Airport",
     "city": "Stockholm",
+    "country": "Sweden",
     "latitude": 59.6519,
     "longitude": 17.9186
 }]

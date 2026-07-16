@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_523bf0b2ba9409a1fc042f0d5ea2c890 {
+                #map_59b7510b6d3eee24c617d7115bf97ce8 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -55,14 +55,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_523bf0b2ba9409a1fc042f0d5ea2c890" ></div>
+            <div class="folium-map" id="map_59b7510b6d3eee24c617d7115bf97ce8" ></div>
         
 </body>
 <script>
     
     
-            var map_523bf0b2ba9409a1fc042f0d5ea2c890 = L.map(
-                "map_523bf0b2ba9409a1fc042f0d5ea2c890",
+            var map_59b7510b6d3eee24c617d7115bf97ce8 = L.map(
+                "map_59b7510b6d3eee24c617d7115bf97ce8",
                 {
                     center: [47.5, 0.5],
                     crs: L.CRS.EPSG3857,
@@ -79,15 +79,15 @@
 
         
     
-            var tile_layer_03459e3b34ff5bf0b90c56ba3ff4a189 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            var tile_layer_30ee12f4b4a4fe79f3f8a89480aa57a5 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
-  "maxZoom": 19,
-  "maxNativeZoom": 19,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
   "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
-  "subdomains": "abc",
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
   "detectRetina": false,
   "tms": false,
   "opacity": 1,
@@ -96,219 +96,107 @@
             );
         
     
-            tile_layer_03459e3b34ff5bf0b90c56ba3ff4a189.addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+            tile_layer_30ee12f4b4a4fe79f3f8a89480aa57a5.addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            var marker_1a9252d7811043168914441e4a5ce0a3 = L.marker(
-                [51.4776, -0.4332],
-                {
-}
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
-        
-    
-            var icon_247fea70f877002e09ce0ab86bfe2bcf = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "green",
-  "iconColor": "white",
-  "icon": "plane-departure",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_abffb0a774157308ff86b629a12967b3 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_4027a339a107f4edfa9f032703ea5de7 = $(`<div id="html_4027a339a107f4edfa9f032703ea5de7" style="width: 100.0%; height: 100.0%;">Departure: London Heathrow (LHR)</div>`)[0];
-                popup_abffb0a774157308ff86b629a12967b3.setContent(html_4027a339a107f4edfa9f032703ea5de7);
-            
-        
-
-        marker_1a9252d7811043168914441e4a5ce0a3.bindPopup(popup_abffb0a774157308ff86b629a12967b3)
-        ;
-
-        
-    
-    
-                marker_1a9252d7811043168914441e4a5ce0a3.setIcon(icon_247fea70f877002e09ce0ab86bfe2bcf);
-            
-    
-            var marker_d4e49e6a12a188e3552e41348ac2500a = L.marker(
-                [43.6291, 1.3638],
-                {
-}
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
-        
-    
-            var icon_a1cc74dd90d6eae2ddfbee92267d9b1c = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "plane-arrival",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_55fd2b5265658758583b37cc519d543a = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_cd78dbe8c6f1785165ebd7b67db8417b = $(`<div id="html_cd78dbe8c6f1785165ebd7b67db8417b" style="width: 100.0%; height: 100.0%;">Destination: Airbus HQ (Toulouse)</div>`)[0];
-                popup_55fd2b5265658758583b37cc519d543a.setContent(html_cd78dbe8c6f1785165ebd7b67db8417b);
-            
-        
-
-        marker_d4e49e6a12a188e3552e41348ac2500a.bindPopup(popup_55fd2b5265658758583b37cc519d543a)
-        ;
-
-        
-    
-    
-                marker_d4e49e6a12a188e3552e41348ac2500a.setIcon(icon_a1cc74dd90d6eae2ddfbee92267d9b1c);
-            
-    
-            var poly_line_832bac7b9c602f005cb90d44b5ff2791 = L.polyline(
-                [[51.4776, -0.4332], [49.9, 0.5], [47.3, 1.2], [43.6291, 1.3638]],
-                {"bubblingMouseEvents": true, "color": "#00205B", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00205B", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
-        
-    
-            ant_path_77586b0aabf9f9b6375e4f96bdcc4655 = L.polyline.antPath(
-              [[51.4776, -0.4332], [49.9, 0.5], [47.3, 1.2], [43.6291, 1.3638]],
-              {
-  "stroke": true,
-  "color": "#005B5B",
-  "weight": 5,
-  "opacity": 0.5,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-20,
-30,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "#005B5B",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 1000,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
-        
-    
-            var marker_840fa611aa0d9eef2c55320ff48209b3 = L.marker(
+            var marker_aec0072f5ee9797648a93d2ce087ebc0 = L.marker(
                 [47.4757, 8.53],
                 {
 }
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            var icon_b78a0f30077f7349d7a993b107f72688 = L.AwesomeMarkers.icon(
+            var icon_501a135ae8b27781d787dc992cd12384 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
-  "icon": "plane-departure",
+  "icon": "plane",
   "prefix": "fa",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_b01537ff10e09c8226910482f2f73075 = L.popup({
+        var popup_dd28db1a65f2792ff7f64e45a8f64eec = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_a761c1b2d9e7c68b0e22fe44d2b2787d = $(`<div id="html_a761c1b2d9e7c68b0e22fe44d2b2787d" style="width: 100.0%; height: 100.0%;">Departure: Zurich Airport (ZRH)</div>`)[0];
-                popup_b01537ff10e09c8226910482f2f73075.setContent(html_a761c1b2d9e7c68b0e22fe44d2b2787d);
+                var html_d169344fe8259186a2ec67fafbe34678 = $(`<div id="html_d169344fe8259186a2ec67fafbe34678" style="width: 100.0%; height: 100.0%;">Flight: LX234</div>`)[0];
+                popup_dd28db1a65f2792ff7f64e45a8f64eec.setContent(html_d169344fe8259186a2ec67fafbe34678);
             
         
 
-        marker_840fa611aa0d9eef2c55320ff48209b3.bindPopup(popup_b01537ff10e09c8226910482f2f73075)
+        marker_aec0072f5ee9797648a93d2ce087ebc0.bindPopup(popup_dd28db1a65f2792ff7f64e45a8f64eec)
         ;
 
         
     
     
-                marker_840fa611aa0d9eef2c55320ff48209b3.setIcon(icon_b78a0f30077f7349d7a993b107f72688);
+                marker_aec0072f5ee9797648a93d2ce087ebc0.setIcon(icon_501a135ae8b27781d787dc992cd12384);
             
     
-            var marker_ffce9be266905ed4e2d82db48d6620b8 = L.marker(
-                [59.6373, 17.9132],
+            var marker_e9929f0b870c3f89f77334b24786556c = L.marker(
+                [59.6519, 17.9186],
                 {
 }
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            var icon_e45a6f87daba183719a0cd3066875f8e = L.AwesomeMarkers.icon(
+            var icon_7e3f0109e0e21f73e0c2c9ccfe351fbc = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
-  "icon": "plane-arrival",
+  "icon": "plane",
   "prefix": "fa",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_176e36969e349480783d3c33e73dbfbe = L.popup({
+        var popup_279eae349bd5f8bf41ecc2ead202dc52 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ae3ef40501dc7f67e49f03140b830c93 = $(`<div id="html_ae3ef40501dc7f67e49f03140b830c93" style="width: 100.0%; height: 100.0%;">Destination: Stockholm Arlanda Airport (ARN)</div>`)[0];
-                popup_176e36969e349480783d3c33e73dbfbe.setContent(html_ae3ef40501dc7f67e49f03140b830c93);
+                var html_f0c6502906420d5c3aa26dd431d77367 = $(`<div id="html_f0c6502906420d5c3aa26dd431d77367" style="width: 100.0%; height: 100.0%;">Flight: LX234</div>`)[0];
+                popup_279eae349bd5f8bf41ecc2ead202dc52.setContent(html_f0c6502906420d5c3aa26dd431d77367);
             
         
 
-        marker_ffce9be266905ed4e2d82db48d6620b8.bindPopup(popup_176e36969e349480783d3c33e73dbfbe)
+        marker_e9929f0b870c3f89f77334b24786556c.bindPopup(popup_279eae349bd5f8bf41ecc2ead202dc52)
         ;
 
         
     
     
-                marker_ffce9be266905ed4e2d82db48d6620b8.setIcon(icon_e45a6f87daba183719a0cd3066875f8e);
+                marker_e9929f0b870c3f89f77334b24786556c.setIcon(icon_7e3f0109e0e21f73e0c2c9ccfe351fbc);
             
     
-            var poly_line_1b53ed964dcdbaabc65882c700ac03c4 = L.polyline(
-                [[47.4757, 8.53], [52.52, 13.405], [57.6348, 18.2948], [59.6373, 17.9132]],
-                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+            var poly_line_130f07555ad1ebc14be9f4b59fb104ed = L.polyline(
+                [[47.4757, 8.53], [52.52, 13.405], [57.6348, 18.2948], [59.6519, 17.9186]],
+                {"bubblingMouseEvents": true, "color": "#DBEB00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#DBEB00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            ant_path_2dd3b111561bc97602cf4ba9b9844e5f = L.polyline.antPath(
-              [[47.4757, 8.53], [52.52, 13.405], [57.6348, 18.2948], [59.6373, 17.9132]],
+            ant_path_f3296825fc15f475add92790b69cc39a = L.polyline.antPath(
+              [[47.4757, 8.53], [52.52, 13.405], [57.6348, 18.2948], [59.6519, 17.9186]],
               {
   "stroke": true,
-  "color": "#FF4500",
-  "weight": 5,
-  "opacity": 0.5,
+  "color": "#DBEB00",
+  "weight": 2.5,
+  "opacity": 1,
   "lineCap": "round",
   "lineJoin": "round",
   "dashArray": [
+10,
 20,
-30,
 ],
   "dashOffset": null,
   "fill": false,
-  "fillColor": "#FF4500",
+  "fillColor": "#DBEB00",
   "fillOpacity": 0.2,
   "fillRule": "evenodd",
   "bubblingMouseEvents": true,
@@ -317,110 +205,110 @@
   "paused": false,
   "reverse": false,
   "hardwareAcceleration": false,
-  "delay": 1000,
+  "delay": 400,
   "pulseColor": "#FFFFFF",
 }
-        ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+        ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            var marker_7c0a7f47c6ac59ccf6c907907a520f49 = L.marker(
-                [40.6217, -73.8016],
+            var marker_d1810d685cf04b5a396d714d39cdf851 = L.marker(
+                [1.3644, 103.9915],
                 {
 }
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            var icon_a8086c98cdda3ab2d114b7527158a660 = L.AwesomeMarkers.icon(
+            var icon_dabafc8148d13b3e023f85bafc7c3dce = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
-  "icon": "plane-departure",
+  "icon": "plane",
   "prefix": "fa",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_c6d59019584ec120df9ebd9ade9dcf67 = L.popup({
+        var popup_dfcb6a504e208e67ae490000122b19b2 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_30370cc2fd403cc761beb8b517a46782 = $(`<div id="html_30370cc2fd403cc761beb8b517a46782" style="width: 100.0%; height: 100.0%;">Departure: JFK Airport (JFK)</div>`)[0];
-                popup_c6d59019584ec120df9ebd9ade9dcf67.setContent(html_30370cc2fd403cc761beb8b517a46782);
+                var html_134ca30cdc48fc9e765eb868f9dfc8e9 = $(`<div id="html_134ca30cdc48fc9e765eb868f9dfc8e9" style="width: 100.0%; height: 100.0%;">Flight: SQ24</div>`)[0];
+                popup_dfcb6a504e208e67ae490000122b19b2.setContent(html_134ca30cdc48fc9e765eb868f9dfc8e9);
             
         
 
-        marker_7c0a7f47c6ac59ccf6c907907a520f49.bindPopup(popup_c6d59019584ec120df9ebd9ade9dcf67)
+        marker_d1810d685cf04b5a396d714d39cdf851.bindPopup(popup_dfcb6a504e208e67ae490000122b19b2)
         ;
 
         
     
     
-                marker_7c0a7f47c6ac59ccf6c907907a520f49.setIcon(icon_a8086c98cdda3ab2d114b7527158a660);
+                marker_d1810d685cf04b5a396d714d39cdf851.setIcon(icon_dabafc8148d13b3e023f85bafc7c3dce);
             
     
-            var marker_10817e9970cb9f8d18b438319c75a45f = L.marker(
-                [1.3347, 103.9825],
+            var marker_7554043da7a486ab26503b590545827f = L.marker(
+                [40.6397, -73.7789],
                 {
 }
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            var icon_07ef0e0c9ba1c936050de6be229a3df1 = L.AwesomeMarkers.icon(
+            var icon_2e08468f8c841e1fafaf7b1676ff3ffe = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
-  "icon": "plane-arrival",
+  "icon": "plane",
   "prefix": "fa",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_c7166c7632940f52e79a5b183ddd0a6b = L.popup({
+        var popup_168fcc4841ee4fee4ec8f05750753cd8 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_796bdfa773a4bdb7268c023d5767ab6c = $(`<div id="html_796bdfa773a4bdb7268c023d5767ab6c" style="width: 100.0%; height: 100.0%;">Destination: Singapore Changi Airport (SIN)</div>`)[0];
-                popup_c7166c7632940f52e79a5b183ddd0a6b.setContent(html_796bdfa773a4bdb7268c023d5767ab6c);
+                var html_b2a6da668738c94669117046858825b9 = $(`<div id="html_b2a6da668738c94669117046858825b9" style="width: 100.0%; height: 100.0%;">Flight: SQ24</div>`)[0];
+                popup_168fcc4841ee4fee4ec8f05750753cd8.setContent(html_b2a6da668738c94669117046858825b9);
             
         
 
-        marker_10817e9970cb9f8d18b438319c75a45f.bindPopup(popup_c7166c7632940f52e79a5b183ddd0a6b)
+        marker_7554043da7a486ab26503b590545827f.bindPopup(popup_168fcc4841ee4fee4ec8f05750753cd8)
         ;
 
         
     
     
-                marker_10817e9970cb9f8d18b438319c75a45f.setIcon(icon_07ef0e0c9ba1c936050de6be229a3df1);
+                marker_7554043da7a486ab26503b590545827f.setIcon(icon_2e08468f8c841e1fafaf7b1676ff3ffe);
             
     
-            var poly_line_6e0876a66fa72f4898ec64bd8cfa8a5a = L.polyline(
-                [[40.6217, -73.8016], [41.9773, -87.908], [34.0522, -118.2437], [1.3347, 103.9825]],
-                {"bubblingMouseEvents": true, "color": "#008000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#008000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+            var poly_line_80bdaec42efa2fb7be9fe0157cbecd76 = L.polyline(
+                [[1.3644, 103.9915], [30.0444, 31.2357], [40.7128, -74.006], [40.6397, -73.7789]],
+                {"bubblingMouseEvents": true, "color": "#DBEB00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#DBEB00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
     
-            ant_path_9c70e05c05eba9ff7ae705e37b26728c = L.polyline.antPath(
-              [[40.6217, -73.8016], [41.9773, -87.908], [34.0522, -118.2437], [1.3347, 103.9825]],
+            ant_path_cf37e1ee4dbe33a49bc4f4729bf3d021 = L.polyline.antPath(
+              [[1.3644, 103.9915], [30.0444, 31.2357], [40.7128, -74.006], [40.6397, -73.7789]],
               {
   "stroke": true,
-  "color": "#32CD32",
-  "weight": 5,
-  "opacity": 0.5,
+  "color": "#DBEB00",
+  "weight": 2.5,
+  "opacity": 1,
   "lineCap": "round",
   "lineJoin": "round",
   "dashArray": [
+10,
 20,
-30,
 ],
   "dashOffset": null,
   "fill": false,
-  "fillColor": "#32CD32",
+  "fillColor": "#DBEB00",
   "fillOpacity": 0.2,
   "fillRule": "evenodd",
   "bubblingMouseEvents": true,
@@ -429,10 +317,346 @@
   "paused": false,
   "reverse": false,
   "hardwareAcceleration": false,
-  "delay": 1000,
+  "delay": 400,
   "pulseColor": "#FFFFFF",
 }
-        ).addTo(map_523bf0b2ba9409a1fc042f0d5ea2c890);
+        ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var marker_35f5f557f3afd08ca786b19378e7cef9 = L.marker(
+                [33.9425, -118.4081],
+                {
+}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var icon_279f03ed274d00f1dbc8c646fa56647f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_565bd3c6ab0d7b759ea13777d7bb23eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6aa4ecc48d6e2a6e91304844ebfd3a63 = $(`<div id="html_6aa4ecc48d6e2a6e91304844ebfd3a63" style="width: 100.0%; height: 100.0%;">Flight: AA100</div>`)[0];
+                popup_565bd3c6ab0d7b759ea13777d7bb23eb.setContent(html_6aa4ecc48d6e2a6e91304844ebfd3a63);
+            
+        
+
+        marker_35f5f557f3afd08ca786b19378e7cef9.bindPopup(popup_565bd3c6ab0d7b759ea13777d7bb23eb)
+        ;
+
+        
+    
+    
+                marker_35f5f557f3afd08ca786b19378e7cef9.setIcon(icon_279f03ed274d00f1dbc8c646fa56647f);
+            
+    
+            var marker_2de99b850837a73599428d8e232ae445 = L.marker(
+                [41.9786, -87.9048],
+                {
+}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var icon_1991190adfc1c6e620e730e6e1900a12 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d8daf6af28aa6a8d3c90d6ec11a3ea7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dca042a13a1a734ff66d4f0a0bf0c04d = $(`<div id="html_dca042a13a1a734ff66d4f0a0bf0c04d" style="width: 100.0%; height: 100.0%;">Flight: AA100</div>`)[0];
+                popup_2d8daf6af28aa6a8d3c90d6ec11a3ea7.setContent(html_dca042a13a1a734ff66d4f0a0bf0c04d);
+            
+        
+
+        marker_2de99b850837a73599428d8e232ae445.bindPopup(popup_2d8daf6af28aa6a8d3c90d6ec11a3ea7)
+        ;
+
+        
+    
+    
+                marker_2de99b850837a73599428d8e232ae445.setIcon(icon_1991190adfc1c6e620e730e6e1900a12);
+            
+    
+            var poly_line_84e746c429ea9f35ecf193a734234edb = L.polyline(
+                [[33.9425, -118.4081], [39.7392, -104.9903], [41.8781, -87.6298], [41.9786, -87.9048]],
+                {"bubblingMouseEvents": true, "color": "#DBEB00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#DBEB00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            ant_path_7994bcba26c6502366e0418a5a7a3038 = L.polyline.antPath(
+              [[33.9425, -118.4081], [39.7392, -104.9903], [41.8781, -87.6298], [41.9786, -87.9048]],
+              {
+  "stroke": true,
+  "color": "#DBEB00",
+  "weight": 2.5,
+  "opacity": 1,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#DBEB00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 400,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var marker_85884c8b6c6120da95dc3eca4dae8b7c = L.marker(
+                [51.4776, -0.4332],
+                {
+}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var icon_29b4b338acd7f3c3b971703d334d32b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc24a881e73af92a78b8f648d37ff86f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba49046c06d4185456aaf5a9a47e51b7 = $(`<div id="html_ba49046c06d4185456aaf5a9a47e51b7" style="width: 100.0%; height: 100.0%;">Flight: BA150</div>`)[0];
+                popup_cc24a881e73af92a78b8f648d37ff86f.setContent(html_ba49046c06d4185456aaf5a9a47e51b7);
+            
+        
+
+        marker_85884c8b6c6120da95dc3eca4dae8b7c.bindPopup(popup_cc24a881e73af92a78b8f648d37ff86f)
+        ;
+
+        
+    
+    
+                marker_85884c8b6c6120da95dc3eca4dae8b7c.setIcon(icon_29b4b338acd7f3c3b971703d334d32b1);
+            
+    
+            var marker_e685ce5a54318a3346a5b9a0feb8d997 = L.marker(
+                [25.2769, 55.2962],
+                {
+}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var icon_99bd9ae715599c535c5df89fb168c5f8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15c48a30680301db43b4290dcc3df786 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e11e930d4eb1405f4888057a4460e6ba = $(`<div id="html_e11e930d4eb1405f4888057a4460e6ba" style="width: 100.0%; height: 100.0%;">Flight: BA150</div>`)[0];
+                popup_15c48a30680301db43b4290dcc3df786.setContent(html_e11e930d4eb1405f4888057a4460e6ba);
+            
+        
+
+        marker_e685ce5a54318a3346a5b9a0feb8d997.bindPopup(popup_15c48a30680301db43b4290dcc3df786)
+        ;
+
+        
+    
+    
+                marker_e685ce5a54318a3346a5b9a0feb8d997.setIcon(icon_99bd9ae715599c535c5df89fb168c5f8);
+            
+    
+            var poly_line_5d4e8562207f88756bb28bd9c74c6be3 = L.polyline(
+                [[51.4776, -0.4332], [55.7558, 37.6173], [25.2769, 55.2962]],
+                {"bubblingMouseEvents": true, "color": "#DBEB00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#DBEB00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            ant_path_cd730a48a2954b55faeb728c8e624e82 = L.polyline.antPath(
+              [[51.4776, -0.4332], [55.7558, 37.6173], [25.2769, 55.2962]],
+              {
+  "stroke": true,
+  "color": "#DBEB00",
+  "weight": 2.5,
+  "opacity": 1,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#DBEB00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 400,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var marker_47f301db4e665bbf2e8fc96b9c4145d7 = L.marker(
+                [49.0097, 2.5479],
+                {
+}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var icon_19ed66ea5e16a77db23e03c01282ebe0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_97ca9f7d2697bf7affe5d822890213f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95f9890a4380ee0a332519ba95404d27 = $(`<div id="html_95f9890a4380ee0a332519ba95404d27" style="width: 100.0%; height: 100.0%;">Flight: AF200</div>`)[0];
+                popup_97ca9f7d2697bf7affe5d822890213f9.setContent(html_95f9890a4380ee0a332519ba95404d27);
+            
+        
+
+        marker_47f301db4e665bbf2e8fc96b9c4145d7.bindPopup(popup_97ca9f7d2697bf7affe5d822890213f9)
+        ;
+
+        
+    
+    
+                marker_47f301db4e665bbf2e8fc96b9c4145d7.setIcon(icon_19ed66ea5e16a77db23e03c01282ebe0);
+            
+    
+            var marker_d72b375112e35e8513e2ce915c9d76c5 = L.marker(
+                [35.7647, 140.3864],
+                {
+}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            var icon_4f55b679909bf464406ec97838a4eee4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ae325160c1d5856bc04de3e1e328e99 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90f4d784901273dd26c850d2a08947e4 = $(`<div id="html_90f4d784901273dd26c850d2a08947e4" style="width: 100.0%; height: 100.0%;">Flight: AF200</div>`)[0];
+                popup_1ae325160c1d5856bc04de3e1e328e99.setContent(html_90f4d784901273dd26c850d2a08947e4);
+            
+        
+
+        marker_d72b375112e35e8513e2ce915c9d76c5.bindPopup(popup_1ae325160c1d5856bc04de3e1e328e99)
+        ;
+
+        
+    
+    
+                marker_d72b375112e35e8513e2ce915c9d76c5.setIcon(icon_4f55b679909bf464406ec97838a4eee4);
+            
+    
+            var poly_line_c16bf7f20198887e91e2678af0b136de = L.polyline(
+                [[49.0097, 2.5479], [55.7558, 37.6173], [35.7647, 140.3864]],
+                {"bubblingMouseEvents": true, "color": "#DBEB00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#DBEB00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
+        
+    
+            ant_path_a510697fbbfb68b604015abf556a9cea = L.polyline.antPath(
+              [[49.0097, 2.5479], [55.7558, 37.6173], [35.7647, 140.3864]],
+              {
+  "stroke": true,
+  "color": "#DBEB00",
+  "weight": 2.5,
+  "opacity": 1,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#DBEB00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 400,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_59b7510b6d3eee24c617d7115bf97ce8);
         
 </script>
 </html>
