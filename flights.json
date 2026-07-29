@@ -23,7 +23,7 @@
         }
     ],
     "registration": "HB-XYZ",
-    "status": "On Time"
+    "progress": 0.75
 },
 {
     "flight_number": "SQ24",
@@ -50,7 +50,7 @@
         }
     ],
     "registration": "9V-SKQ",
-    "status": "On Time"
+    "progress": 0.23
 },
 {
     "flight_number": "AA100",
@@ -77,7 +77,7 @@
         }
     ],
     "registration": "N123AA",
-    "status": "Delayed"
+    "progress": 0.5
 },
 {
     "flight_number": "BA150",
@@ -100,7 +100,7 @@
         }
     ],
     "registration": "G-BAAB",
-    "status": "On Time"
+    "progress": 0.43
 },
 {
     "flight_number": "AF200",
@@ -123,5 +123,5 @@
         }
     ],
     "registration": "F-GZAF",
-    "status": "Cancelled"
+    "progress": 0.92
 }]

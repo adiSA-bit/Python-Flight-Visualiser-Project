@@ -5,6 +5,9 @@ from folium.plugins import AntPath
 
 
 def create_popup(flight, aircraft): # Creates a CSS-styled popup for the flight marker
+
+    status = calculate_status(flight['progress']) # Calculate the flight status based on progress
+
     popup_html = f"""
     <div style="
         width:160px;
@@ -28,7 +31,7 @@ def create_popup(flight, aircraft): # Creates a CSS-styled popup for the flight 
     {aircraft['registration']}</p>
 
     <p><b>Status</b><br>
-    {flight['status']}</p>
+    {status}</p>
 
     </div>
     """
@@ -36,13 +39,13 @@ def create_popup(flight, aircraft): # Creates a CSS-styled popup for the flight 
     return folium.Popup(popup_html, max_width=300)
 
 
-def add_marker(map_object, location, colour, popup): # Adds a marker to the specified map object with the given location, colour, and popup
+def add_marker(map_object, location, colour, popup, icon="plane"): # Adds a marker to the specified map object with the given location, colour, and popup
     folium.Marker(
         location=location,
         popup=popup, # Use the popup created by the create_popup function
         icon=folium.Icon(
             color=colour,
-            icon="plane",
+            icon=icon,
             prefix="fa"
         )
     ).add_to(map_object)
@@ -54,6 +57,42 @@ flight_map = folium.Map(
     zoom_start=5,
     tiles="CartoDB positron"
 )
+
+def calculate_status(progress): # Determines the flight status based on the progress value
+    if progress == 0.0:
+        return "Parked"
+    if progress <= 0.05:
+        return "Taxiing"
+    if progress <= 0.15:
+        return "Taking Off"
+    if progress <= 0.25:
+        return "Climbing"
+    if progress <= 0.80:
+        return "Cruising"
+    if progress < 1.0:
+        return "Descending"
+
+    return "Arrived"
+
+def calculate_current_position(route, progress): # Calculates the current position of the flight based on the route and progress value
+    if progress <= 0.0: # If progress is 0 or less, return the starting point of the route
+        return route[0]
+    if progress >= 1.0:
+        return route[-1] # If progress is 1 or more, return the ending point of the route
+
+    # Otherwise, calculate the current position based on the progress value
+    segments = len(route) - 1
+    position = progress * segments
+
+    segment = int(position)
+    fraction = position - segment
+
+    start = route[segment]
+    end = route[segment + 1]
+
+    latitude = start["latitude"] + fraction * (end["latitude"] - start["latitude"])
+    longitude = start["longitude"] + fraction * (end["longitude"] - start["longitude"])
+    return {"latitude": latitude, "longitude": longitude}
 
 # Load all the JSON data
 with open("flights.json", "r") as flight_file:
@@ -84,12 +123,24 @@ for flight in flight_data:
 
     popup = create_popup(flight, aircraft)
 
+    # Calculate aircraft's current position
+    current_position = calculate_current_position(
+        flight["route"],
+        flight["progress"]
+    )
+
+    current_location = [
+        current_position["latitude"],
+        current_position["longitude"]
+    ]
+
     # Departure marker
     add_marker(
         flight_map,
         start_location,
         "green",
-        create_popup(flight, aircraft)
+        create_popup(flight, aircraft),
+        "play"
     )
 
     # Arrival marker
@@ -97,7 +148,17 @@ for flight in flight_data:
         flight_map,
         end_location,
         "red",
-        create_popup(flight, aircraft)
+        create_popup(flight, aircraft),
+        "flag"
+    )
+
+    # Aircraft marker
+    add_marker(
+        flight_map,
+        current_location,
+        "blue",
+        create_popup(flight, aircraft),
+        "plane"
     )
 
     coordinates = [
