@@ -1,186 +1,171 @@
-import json
+import os
+from datetime import datetime, UTC
 
+import requests
 import folium
-from folium.plugins import AntPath
 
 
-def create_popup(flight, aircraft): # Creates a CSS-styled popup for the flight marker
+API_KEY = os.getenv("AIRLABS_API_KEY")
 
-    status = calculate_status(flight['progress']) # Calculate the flight status based on progress
+
+if API_KEY is None:
+    print("API key not found!")
+    exit()
+
+
+def get_live_flights():
+    # Fetch live flight data from AirLabs API
+
+    url = "https://airlabs.co/api/v9/flights"
+
+    try:
+        response = requests.get(
+            url,
+            params={"api_key": API_KEY}
+        )
+
+        response.raise_for_status()
+
+        return response.json()["response"]
+
+    except requests.RequestException as e:
+        print(f"Failed to fetch flights: {e}")
+        return []
+
+
+def create_popup(flight):
+    # Creates a popup containing flight information.
+
+    # Convert UNIX timestamp to UTC time
+    updated = datetime.fromtimestamp(
+        flight["updated"],
+        tz=UTC
+    ).strftime("%Y-%m-%d %H:%M UTC")
+
+
+
+    altitude = flight.get("alt", "N/A")
+    registration = flight.get("reg_number", "N/A")
+    flight_number = flight.get("flight_iata", "N/A")
 
     popup_html = f"""
     <div style="
-        width:160px;
-        padding:20px;
+        width:220px;
+        padding:15px;
         font-family:Arial, sans-serif;
     ">
 
     <h2 style="color:#0B5394;margin-bottom:8px;">
-    ✈ {flight['flight_number']}
+        ✈ {flight_number}
     </h2>
 
     <hr>
 
     <p><b>Aircraft</b><br>
-    {aircraft['model']}</p>
-
-    <p><b>Airline</b><br>
-    {aircraft['airline']}</p>
+    {flight.get("aircraft_icao", "N/A")}</p>
 
     <p><b>Registration</b><br>
-    {aircraft['registration']}</p>
+    {registration}</p>
+
+    <p><b>Airline</b><br>
+    {flight.get("airline_iata", "N/A")}</p>
+
+    <p><b>Route</b><br>
+    {flight.get("dep_iata", "N/A")} → {flight.get("arr_iata", "N/A")}
+    </p>
 
     <p><b>Status</b><br>
-    {status}</p>
+    {flight.get("status", "N/A")}
+    </p>
+
+    <p><b>Altitude</b><br>
+    {altitude} m
+    </p>
+
+    <p><b>Heading</b><br>
+    {flight.get("dir", "N/A")}°
+    </p>
+
+    <p><b>Updated</b><br>
+    {updated}
+    </p>
 
     </div>
     """
 
-    return folium.Popup(popup_html, max_width=300)
+    return folium.Popup(
+        popup_html,
+        max_width=300
+    )
 
 
-def add_marker(map_object, location, colour, popup, icon="plane"): # Adds a marker to the specified map object with the given location, colour, and popup
+def add_aircraft_marker(map_object, flight):
+    # Adds aircraft marker to map.
+
+    latitude = flight.get("lat")
+    longitude = flight.get("lng")
+
+
+    # Ignore flights without coordinates
+    if latitude is None or longitude is None:
+        return
+
+
+    popup = create_popup(flight)
+
+
     folium.Marker(
-        location=location,
-        popup=popup, # Use the popup created by the create_popup function
+        location=[latitude, longitude],
+        popup=popup,
         icon=folium.Icon(
-            color=colour,
-            icon=icon,
-            prefix="fa"
+            icon="plane",
+            prefix="fa",
+            color="blue"
         )
     ).add_to(map_object)
 
 
-# Create a map centered on France
+
+# Create map
 flight_map = folium.Map(
-    location=[47.5, 0.5],
-    zoom_start=5,
+    location=[50, 0],
+    zoom_start=4,
     tiles="CartoDB positron"
 )
 
-def calculate_status(progress): # Determines the flight status based on the progress value
-    if progress == 0.0:
-        return "Parked"
-    if progress <= 0.05:
-        return "Taxiing"
-    if progress <= 0.15:
-        return "Taking Off"
-    if progress <= 0.25:
-        return "Climbing"
-    if progress <= 0.80:
-        return "Cruising"
-    if progress < 1.0:
-        return "Descending"
 
-    return "Arrived"
 
-def calculate_current_position(route, progress): # Calculates the current position of the flight based on the route and progress value
-    if progress <= 0.0: # If progress is 0 or less, return the starting point of the route
-        return route[0]
-    if progress >= 1.0:
-        return route[-1] # If progress is 1 or more, return the ending point of the route
+# Fetch flights
+flights = get_live_flights()
 
-    # Otherwise, calculate the current position based on the progress value
-    segments = len(route) - 1
-    position = progress * segments
 
-    segment = int(position)
-    fraction = position - segment
+# Add aircraft markers
+count = 0
 
-    start = route[segment]
-    end = route[segment + 1]
+for flight in flights:
 
-    latitude = start["latitude"] + fraction * (end["latitude"] - start["latitude"])
-    longitude = start["longitude"] + fraction * (end["longitude"] - start["longitude"])
-    return {"latitude": latitude, "longitude": longitude}
+    registration = flight.get("reg_number")
 
-# Load all the JSON data
-with open("flights.json", "r") as flight_file:
-    flight_data = json.load(flight_file)
+    if registration == "[OBJECT OBJECT]":
+        registration = "N/A"
 
-with open("aircrafts.json", "r") as aircraft_file:
-    aircraft_data = json.load(aircraft_file)
-
-# Create lookup dictionary for aircraft
-aircraft_lookup = {
-    aircraft["registration"]: aircraft
-    for aircraft in aircraft_data
-}
-
-# Loop through each JSON flight, add markers and polylines to the map
-for flight in flight_data:
-
-    aircraft = aircraft_lookup.get(flight["registration"])
-
-    if aircraft is None:
-        continue
-
-    start = flight["route"][0]
-    end = flight["route"][-1]
-
-    start_location = [start["latitude"], start["longitude"]]
-    end_location = [end["latitude"], end["longitude"]]
-
-    popup = create_popup(flight, aircraft)
-
-    # Calculate aircraft's current position
-    current_position = calculate_current_position(
-        flight["route"],
-        flight["progress"]
-    )
-
-    current_location = [
-        current_position["latitude"],
-        current_position["longitude"]
-    ]
-
-    # Departure marker
-    add_marker(
+    add_aircraft_marker(
         flight_map,
-        start_location,
-        "green",
-        create_popup(flight, aircraft),
-        "play"
+        flight
     )
 
-    # Arrival marker
-    add_marker(
-        flight_map,
-        end_location,
-        "red",
-        create_popup(flight, aircraft),
-        "flag"
-    )
+    count += 1
 
-    # Aircraft marker
-    add_marker(
-        flight_map,
-        current_location,
-        "blue",
-        create_popup(flight, aircraft),
-        "plane"
-    )
 
-    coordinates = [
-        [point["latitude"], point["longitude"]]
-        for point in flight["route"]
-    ]
+    # Prevent huge maps initially
+    if count >= 100:
+        break
 
-    folium.PolyLine(
-        locations=coordinates,
-        color="#DBEB00",
-        weight=2.5,
-        opacity=1
-    ).add_to(flight_map)
 
-    AntPath(
-        locations=coordinates,
-        color="#DBEB00",
-        weight=2.5,
-        opacity=1
-    ).add_to(flight_map)
 
-# Save the map
+# Save map
 flight_map.save("my_flight_visualizer.html")
 
-print("Success! Open 'my_flight_visualizer.html' in your browser to see your map.")
+
+print(f"Success! Added {count} aircraft.")
+print("Open 'my_flight_visualizer.html' in your browser.")
