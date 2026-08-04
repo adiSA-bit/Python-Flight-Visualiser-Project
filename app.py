@@ -3,6 +3,7 @@ from datetime import datetime, UTC
 
 import requests
 import folium
+from folium.features import DivIcon
 
 
 API_KEY = os.getenv("AIRLABS_API_KEY")
@@ -104,7 +105,7 @@ def add_aircraft_marker(map_object, flight):
 
     latitude = flight.get("lat")
     longitude = flight.get("lng")
-
+    heading = flight.get("dir", 0)
 
     # Ignore flights without coordinates
     if latitude is None or longitude is None:
@@ -113,14 +114,28 @@ def add_aircraft_marker(map_object, flight):
 
     popup = create_popup(flight)
 
+    rotation = (heading - 90) % 360  # Adjust rotation to align with the icon's orientation
 
     folium.Marker(
         location=[latitude, longitude],
         popup=popup,
-        icon=folium.Icon(
-            icon="plane",
-            prefix="fa",
-            color="blue"
+        icon=DivIcon( # Replace with a rotated airplane icon to simulate heading
+            icon_size=(30, 30),
+            icon_anchor=(15,15),
+            html=f"""
+            <div style="
+                transform: rotate({rotation}deg);
+                transform-origin: center;
+                font-size: 25px;
+                color: blue;
+                width: 30px;
+                height: 15px;
+                text-align: center;
+                line-height: 30px;
+            ">
+                ✈
+            </div>
+            """
         )
     ).add_to(map_object)
 
