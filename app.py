@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, UTC
+import time
 
 import requests
 import folium
@@ -22,7 +23,8 @@ def get_live_flights():
     try:
         response = requests.get(
             url,
-            params={"api_key": API_KEY}
+            params={"api_key": API_KEY},
+            timeout=10
         )
 
         response.raise_for_status()
@@ -139,48 +141,65 @@ def add_aircraft_marker(map_object, flight):
         )
     ).add_to(map_object)
 
-
-
-# Create map
-flight_map = folium.Map(
-    location=[50, 0],
-    zoom_start=4,
-    tiles="CartoDB positron"
-)
-
-
-
 # Fetch flights
-flights = get_live_flights()
+UPDATE_INTERVAL = 60  # Seconds between updates
 
+while True:
 
-# Add aircraft markers
-count = 0
-
-for flight in flights:
-
-    registration = flight.get("reg_number")
-
-    if registration == "[OBJECT OBJECT]":
-        registration = "N/A"
-
-    add_aircraft_marker(
-        flight_map,
-        flight
+    # Creates a new map every iteration to ensure old markers are cleared
+    flight_map = folium.Map(
+        location=[51.5074, -0.1278],
+        zoom_start=5,
+        tiles="CartoDB positron"
     )
 
-    count += 1
+    # Fetch the latest flights
+    flights = get_live_flights()
 
+    if not flights:
+        print("No flight data received. Keeping previous map.")
+        time.sleep(UPDATE_INTERVAL)
+        continue
 
-    # Prevent huge maps initially
-    if count >= 100:
-        break
+    count = 0
 
+    # Add aircraft markers
+    for flight in flights:
 
+        registration = flight.get("reg_number")
 
-# Save map
-flight_map.save("my_flight_visualizer.html")
+        if registration in (None, "[OBJECT OBJECT]"):
+            flight["reg_number"] = "N/A"
 
+        add_aircraft_marker(
+            flight_map,
+            flight
+        )
 
-print(f"Success! Added {count} aircraft.")
-print("Open 'my_flight_visualizer.html' in your browser.")
+        count += 1
+
+        # Prevent huge maps initially
+        if count >= 100:
+            break
+
+    # Save updated map
+    flight_map.save("my_flight_visualizer.html")
+
+    with open("my_flight_visualizer.html", "r", encoding="utf-8") as file:
+        html = file.read()
+
+    # Add meta refresh tag to auto-refresh the page every 60 seconds
+    html = html.replace(
+        "<head>",
+        '<head>\n<meta http-equiv="refresh" content="60">'
+    )
+
+    with open("my_flight_visualizer.html", "w", encoding="utf-8") as file:
+        file.write(html)
+
+    print(
+    f"[{datetime.now().strftime('%H:%M:%S')}] "
+    f"Map updated! Added {count} aircraft.")
+
+    # Wait before fetching new data
+    time.sleep(UPDATE_INTERVAL)
