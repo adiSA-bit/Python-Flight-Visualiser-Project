@@ -1,3 +1,4 @@
+import json
 import os
 from datetime import datetime, UTC
 import time
@@ -101,6 +102,60 @@ def create_popup(flight):
         max_width=300
     )
 
+def load_trails():
+    # Load aircraft trail data from trails.json
+
+    try:
+        with open("trails.json", "r", encoding="utf-8") as file:
+            return json.load(file)
+
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+def save_trails(trails):
+    # Save aircraft trail data to trails.json
+
+    with open("trails.json", "w", encoding="utf-8") as file:
+        json.dump(trails, file, indent=4)
+
+def update_trail(trails, flight):
+    # Add the aircraft's current position to its trail
+
+    latitude = flight.get("lat")
+    longitude = flight.get("lng")
+
+    if latitude is None or longitude is None:
+        return None
+
+    aircraft_id = flight.get("reg_number")
+
+    if aircraft_id in (None, "[OBJECT OBJECT]", "N/A"):
+        aircraft_id = flight.get("flight_iata")
+
+    if aircraft_id in (None, "N/A"):
+        return None
+
+    if aircraft_id not in trails:
+        trails[aircraft_id] = []
+
+    trails[aircraft_id].append([latitude, longitude])
+
+    # Keep only the most recent 20 positions
+    trails[aircraft_id] = trails[aircraft_id][-20:]
+
+    return aircraft_id
+
+def draw_trail(map_object, trail):
+    # Draw an aircraft trail on the map
+
+    if len(trail) < 2:
+        return
+
+    folium.PolyLine(
+        locations=trail,
+        weight=2,
+        opacity=0.7
+    ).add_to(map_object)
 
 def add_aircraft_marker(map_object, flight):
     # Adds aircraft marker to map.
@@ -144,6 +199,8 @@ def add_aircraft_marker(map_object, flight):
 # Fetch flights
 UPDATE_INTERVAL = 60  # Seconds between updates
 
+trails = load_trails()
+
 while True:
 
     # Creates a new map every iteration to ensure old markers are cleared
@@ -171,6 +228,14 @@ while True:
         if registration in (None, "[OBJECT OBJECT]"):
             flight["reg_number"] = "N/A"
 
+        aircraft_id = update_trail(trails, flight)
+
+        if aircraft_id is not None:
+            draw_trail(
+                flight_map,
+                trails[aircraft_id]
+            )
+
         add_aircraft_marker(
             flight_map,
             flight
@@ -182,7 +247,8 @@ while True:
         if count >= 100:
             break
 
-    # Save updated map
+    # Save the updated trails and map
+    save_trails(trails)
     flight_map.save("my_flight_visualizer.html")
 
     with open("my_flight_visualizer.html", "r", encoding="utf-8") as file:
