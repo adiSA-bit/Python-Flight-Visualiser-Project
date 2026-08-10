@@ -1,2 +1,5 @@
-# Python-Flight-Visualiser-Project
-An interactive flight visualiser that tracks flight paths and their current altitude, climb rate, speed and aircraft type.
+# Flight Visualiser
+
+This is a Python-based flight visualiser that displays live aircraft data on an interactive flight map. The project uses the AirLabs API to retrieve aircraft information and Folium to generate an interactive map showing aircraft positions, flight paths, and aircraft trails.
+
+
