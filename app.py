@@ -205,10 +205,16 @@ while True:
 
     # Creates a new map every iteration to ensure old markers are cleared
     flight_map = folium.Map(
-        location=[51.5074, -0.1278],
-        zoom_start=5,
-        tiles="CartoDB positron"
+        location=[20, 0],
+        zoom_start=3,
+        tiles=None,
+        max_bounds=True
     )
+
+    folium.TileLayer( # Make sure to not create duplicate tile layers on each iteration
+        "CartoDB positron",
+        no_wrap=True
+    ).add_to(flight_map)
 
     # Fetch the latest flights
     flights = get_live_flights()
