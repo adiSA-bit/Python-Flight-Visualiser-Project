@@ -4,12 +4,24 @@ This is a Python-based flight visualiser that displays live aircraft data on an 
 
 ## Features
 
-→ Interactive map that displays live aircraft data using an external API.
-→ Allows a user view information of a flight's aircraft type, registration, airline, route, current status, altitude, heading and current refresh update.
-→ The aircraft's position changes with respect to the heading, and this happens during every refresh cycle.
-→ 
+- Live aircraft data retrieved from the AirLabs API
+- Interactive Folium map
+- Aircraft markers showing flight information
+- Aircraft position updates on each refresh
+- Flight paths showing previous aircraft positions
+- Animated flight paths using AntPath
+- Automatic map refreshes at a configurable interval
+- Aircraft markers that indicate heading/direction
 
 ## Technologies used
+
+- **Python** - Main programming language used for developing the application.
+- **Folium** - Python library used to generate the interactive map and display the live aircraft data.
+- **AirLabs API** - Provides the live flight data.
+- **Requests** - Used to send HTTP requests to the Airlabs API.
+- **JSON** - Used to store aircraft and flight data, as well as recorded aircraft positions for trails.
+- **HTML** - Used as the output format for the map.
+- **Git & GitHub** - Used for version control and project management.
 
 ## How it works
 
