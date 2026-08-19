@@ -25,6 +25,21 @@ This is a Python-based flight visualiser that displays live aircraft data on an 
 
 ## How it works
 
+The application retrieves live aircraft data from the AirLabs API using HTTP requests. The returned data is processed in Python and used to generate an interactive map with Folium.
+
+For each aircraft, the application:
+
+- Retrieves its current position and available flight information from the AirLabs API.
+- Processes the returned data and extracts relevant information such as flight number, aircraft type, registration, altitude and heading.
+- Adds the aircraft to the Folium map using a marker that indicates its current heading.
+- Displays additional flight information through an interactive popup.
+- Records previous aircraft positions to create flight trails.
+- Uses AntPath to animate the flight paths between recorded positions.
+- Generates the map as an HTML file.
+- Automatically refreshes the map at a configurable interval to retrieve updated aircraft positions.
+
+## Screenshots
+
 ## Installation
 
 ## Configuration
