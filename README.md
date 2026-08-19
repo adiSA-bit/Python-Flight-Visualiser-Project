@@ -53,7 +53,7 @@ git clone https://github.com/adiSA-bit/Python-Flight-Visualiser-Project.git
 Navigate into the repository directory:
 
 ```bash
-cd Pythion-Flight-Visualiser-Project/
+cd Python-Flight-Visualiser-Project/
 ```
 
 ### 2. Create a virtual environment
