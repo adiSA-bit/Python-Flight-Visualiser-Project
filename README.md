@@ -42,6 +42,52 @@ For each aircraft, the application:
 
 ## Installation
 
+### 1. Clone the repository
+
+Clone the repository using Git:
+
+```bash
+git clone https://github.com/adiSA-bit/Python-Flight-Visualiser-Project.git
+```
+
+Navigate into the repository directory:
+
+```bash
+cd Pythion-Flight-Visualiser-Project/
+```
+
+### 2. Create a virtual environment
+
+Create a Python virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate the virtual environment.
+
+**Windows**:
+
+```bash
+venv\Scripts\activate
+```
+
+**macOS/Linux**:
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+Install the required Python packages using the provided requirements.txt file:
+
+```bash
+pip install -r requirements.txt
+```
+ 
+Once the dependencies have been installed, proceed to the Configuration section.
+
 ## Configuration
 
 ## Usage
