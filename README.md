@@ -90,7 +90,25 @@ Once the dependencies have been installed, proceed to the Configuration section.
 
 ## Configuration
 
+The application includes a small number of configurable settings that can be adjusted in `app.py`.
+
+### Update Interval
+
+The `UPDATE_INTERVAL` variable controls how frequently the aircraft data and map are refreshed.
+
+```python
+UPDATE_INTERVAL = 60
+```
+
 ## Usage
+
+- Run `app.py`.
+- The application retrieves aircraft data from AirLabs.
+- The Folium map is generated and updated.
+- Open the generated map in a browser.
+- The map automatically refreshes according to the `UPDATE_INTERVAL` value.
+- Click aircraft markers to view information such as flight number, departure/arrival airport, heading and aircraft type.
+- Aircraft trails show the previously recorded positions of every flight.
 
 ## Project structure
 
