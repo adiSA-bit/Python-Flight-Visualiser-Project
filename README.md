@@ -126,7 +126,14 @@ Python-Flight-Visualiser-Project/
 ## Future improvements
 
 - Improved flight trail management — prevent old/stale trail data from persisting between sessions.
-- 
+- Additional map features — Filtering aircraft by airline, aircraft type, altitude, or flight status.
+- Better map performance — optimise the map when displaying large numbers of aircraft and trails.
+- More configurable settings — allow users to change the refresh interval and number of aircraft displayed.
 
 ## Limitations
 
+- API limitations — aircraft data depends on the AirLabs API and its available request limits.
+- Data availability — the information displayed depends on what data AirLabs provides for each aircraft.
+- Map performance — displaying a large number of aircraft and historical trails may affect performance.
+- Trail persistence — recorded trails can persist between sessions, which can result in outdated trail data being displayed.
+- Refresh interval — aircraft positions are updated at intervals rather than continuously, so the displayed position may not always represent the aircraft's exact current location.
