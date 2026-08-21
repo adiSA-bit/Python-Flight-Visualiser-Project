@@ -112,7 +112,21 @@ UPDATE_INTERVAL = 60
 
 ## Project structure
 
+```
+Python-Flight-Visualiser-Project/
+├── app.py
+├── flights.json
+├── aircrafts.json
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+
 ## Future improvements
+
+- Improved flight trail management — prevent old/stale trail data from persisting between sessions.
+- 
 
 ## Limitations
 
