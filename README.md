@@ -40,6 +40,10 @@ For each aircraft, the application:
 
 ## Screenshots
 
+### Main map
+
+![Main map](/home/aditya/Documents/UniOfSurrey/Summer 2026 project/Screenshot1.png)
+
 ## Installation
 
 ### 1. Clone the repository
