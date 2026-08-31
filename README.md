@@ -126,13 +126,15 @@ UPDATE_INTERVAL = 60
 
 ```
 Python-Flight-Visualiser-Project/
+├── screenshots/
+├── README.md
+├── aircrafts.json
+├── airports.json
 ├── app.py
 ├── flights.json
-├── aircrafts.json
+├── my_flight_visualizer.html
 ├── requirements.txt
-├── README.md
-├── LICENSE
-└── .gitignore
+└── test.py
 ```
 
 ## Future improvements
@@ -149,3 +151,4 @@ Python-Flight-Visualiser-Project/
 - Map performance — displaying a large number of aircraft and historical trails may affect performance.
 - Trail persistence — recorded trails can persist between sessions, which can result in outdated trail data being displayed.
 - Refresh interval — aircraft positions are updated at intervals rather than continuously, so the displayed position may not always represent the aircraft's exact current location.
+- API key - The CARTO basemap currently requires an API key due to changes to CARTO's tile access policy, which may result in an API key requirement being displayed on the map. This does not affect the flight data or visualisation functionality.
