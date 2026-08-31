@@ -42,7 +42,15 @@ For each aircraft, the application:
 
 ### Main map
 
-![Main map](/home/aditya/Documents/UniOfSurrey/Summer 2026 project/Screenshot1.png)
+![Flight Visualiser map](screenshots/Screenshot_map.png)
+
+### Flight information
+
+![Flight information popup](screenshots/Screenshot_plane.png)
+
+### Trails
+
+![Flight trails](screenshots/Screenshot_trails.png)
 
 ## Installation
 
